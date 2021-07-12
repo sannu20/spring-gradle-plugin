@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: ./gradlew clean build
+        run: ./gradlew clean build publish
 
       # Runs a single command using the runners shell
       - name: Archive production artifacts
