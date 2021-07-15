@@ -32,8 +32,8 @@ publishing {
             url = uri("https://maven.pkg.github.com/sannu20/spring-gradle-plugin")
 
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = System.getenv("PUBLISH_USER")
+                password = System.getenv("PUBLISH_TOKEN")
             }
         }
     }
