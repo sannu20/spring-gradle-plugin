@@ -15,6 +15,10 @@ gradlePlugin {
             id = "io.sannu.gradle.simple-plugin"
             implementationClass = "io.sannu.gradle.SimplePlugin"
         }
+        create("spring-root-plugin") {
+            id = "io.sannu.gradle.spring-root-plugin"
+            implementationClass = "io.sannu.gradle.SpringPlugin"
+        }
     }
 }
 
