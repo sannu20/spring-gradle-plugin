@@ -1,12 +1,23 @@
+import java.io.ByteArrayOutputStream
+
 plugins {
     kotlin("jvm") version "1.4.31"
-    `java-gradle-plugin`
-    `maven-publish`
+    id("java-gradle-plugin")
+    id("maven-publish")
 }
 
 repositories {
     mavenCentral()
     gradlePluginPortal()
+}
+
+ext {
+    val byteOut = ByteArrayOutputStream();
+    project.exec {
+        commandLine = "git rev-parse --short HEAD".split(" ");
+        standardOutput = byteOut
+    }
+    ext.set("commitHash", String(byteOut.toByteArray()))
 }
 
 gradlePlugin {
@@ -29,7 +40,9 @@ dependencies {
 }
 
 publishing {
-
+    publications {
+        version = "${project.version}-${project.ext.get("commitHash")}"
+    }
     repositories {
         maven {
             name = "GitHubPackages"
