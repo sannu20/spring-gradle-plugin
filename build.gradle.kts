@@ -17,7 +17,7 @@ ext {
         commandLine = "git rev-parse --short HEAD".split(" ");
         standardOutput = byteOut
     }
-    ext.set("commitHash", String(byteOut.toByteArray()))
+    ext.set("commitHash", String(byteOut.toByteArray()).trim())
 }
 
 gradlePlugin {
