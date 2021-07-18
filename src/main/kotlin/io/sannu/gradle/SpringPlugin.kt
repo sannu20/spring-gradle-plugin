@@ -1,12 +1,10 @@
 package io.sannu.gradle
 
-import io.spring.gradle.dependencymanagement.DependencyManagementPlugin
 import io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
-import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 class SpringPlugin : Plugin<Project> {
 
