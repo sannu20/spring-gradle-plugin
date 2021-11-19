@@ -1,14 +1,14 @@
 import java.io.ByteArrayOutputStream
 
 plugins {
-    kotlin("jvm") version "1.4.31"
+    id("org.jetbrains.kotlin.jvm") version "1.6.0"
     id("java-gradle-plugin")
     id("maven-publish")
 }
 
 repositories {
-    mavenCentral()
     gradlePluginPortal()
+    mavenCentral()
 }
 
 ext {
