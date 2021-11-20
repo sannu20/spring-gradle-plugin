@@ -1,6 +1,6 @@
 package io.sannu.gradle
 
-import org.apache.commons.io.IOUtils
+import org.apache.commons.io.IOUtils.toByteArray
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import java.io.File
@@ -20,8 +20,9 @@ class LombokPlugin : Plugin<Project> {
             yourFile.getParentFile().mkdirs();
             yourFile.createNewFile();
 
-            val outStream = FileOutputStream(yourFile, false);
-            outStream.write(IOUtils.toByteArray(this.javaClass.getClassLoader().getResourceAsStream("lombok.config")));
+            FileOutputStream(yourFile, false).use { writer ->
+                writer.write(toByteArray(LombokPlugin::class.java.classLoader.getResourceAsStream("lombok.config")))
+            }
         }
     }
 
