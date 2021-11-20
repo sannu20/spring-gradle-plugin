@@ -30,6 +30,10 @@ gradlePlugin {
             id = "io.sannu.gradle.spring-plugin"
             implementationClass = "io.sannu.gradle.SpringPlugin"
         }
+        create("itest-plugin") {
+            id = "io.sannu.gradle.itest-plugin"
+            implementationClass = "io.sannu.gradle.IntegrationTestPlugin"
+        }
     }
 }
 

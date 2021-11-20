@@ -10,6 +10,7 @@ class SpringPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
         with(project) {
+            pluginManager.apply("idea")
             pluginManager.apply("java")
             extensions.configure<JavaPluginExtension>("java") {
                 it.sourceCompatibility = JavaVersion.VERSION_11
