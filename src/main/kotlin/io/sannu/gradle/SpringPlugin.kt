@@ -23,8 +23,8 @@ class SpringPlugin : Plugin<Project> {
             project.plugins.apply("io.spring.dependency-management")
             extensions.configure<DependencyManagementExtension>("dependencyManagement") {
                 it.imports { import ->
-                    import.mavenBom("org.springframework.boot:spring-boot-dependencies:2.5.2")
-                    import.mavenBom("org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR12")
+                    import.mavenBom("org.springframework.boot:spring-boot-dependencies:2.5.7")
+                    import.mavenBom("org.springframework.cloud:spring-cloud-dependencies:2020.0.4")
                 }
             }
         }
